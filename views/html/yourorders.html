@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orders</title>
+    <style>
+        .box{
+            position: relative;
+            left: 80px;
+            top: 50px;
+        }
+
+        .width{
+            width: 200px;
+        }
+
+        .height{
+            height: 150px;
+            text-align: center;
+        }
+        .header{
+            text-align: center;
+            text-transform: capitalize;
+        }
+        .container{
+            background-color: rgb(199, 139, 67);
+            height: 100vh;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="box">
+            {% block content %}
+            <!-- <p>{{succ1}}</p> -->
+            {% if succ1 %}
+            <div class="green h-16 w-40 bg-green-600  text-center ">
+                <p class="text-center mt-10">{{succ1}}</p>   
+             </div>
+            {% endif %}
+            <h2 class="header">mr : {{name}} your orders</h2>
+            <table border="2">
+                <tr >
+                    <th class="width">name</th>
+                    <th  class="width">image</th>
+                    <th class="width">quantity</th>
+                    <th class="width">total price</th>
+                    <th class="width">restorent name</th>
+
+
+                </tr>
+                {% for item in data%}
+                    <tr class="height">
+                        <td>{{item.food_name}}</td>
+                        <td ><img src="/uploads/{{item.image}}" alt="" width="50px" height="50px"></td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.total_price}}</td>
+                        <td>{{item.restorent_name}}</td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+            
+            {% endblock %}
+            
+        </div>
+    </div>
+    <script>
+        let data = document.querySelector('.green');
+            if(data){
+                data.style.marginLeft = '500px'
+                data.style.background = 'green';
+                data.style.width = '200px';
+                data.style.height = '50px';
+                data.style.borderRadius = '50px';
+                data.style.textAlign = 'center';
+
+                
+
+                function hideDiv() {
+                    data.style.display = "none";
+
+                }
+
+                setTimeout(hideDiv,1000)
+            }
+        
+    </script>
+</body>
+
+</html>

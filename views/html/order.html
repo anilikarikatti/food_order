@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order food</title>
+
+    <style>
+        .contaner{
+            height: 100vh;
+            
+        }
+
+        .box{
+            margin-left: 400px;
+            background-color: rgb(29, 160, 24);
+            width: 500px;
+            height: 600px;
+        }
+        .image,.quantity,.order{
+            margin-top: 50px;
+        }
+        .price,.totprice{
+            margin-top: 20px;
+        }
+        .name,.image,.order{
+            text-align: center;
+        }
+        .name{
+            text-transform: capitalize;
+            font-size: larger;
+        }
+        .price,.quantity,.totprice{
+            margin-left: 40px;
+        }
+       
+        .totprice{
+            margin-left: 40px;
+        }
+        .inp{
+            margin-left: 60px;
+        }
+        .inp1{
+            margin-left: 80px;
+        }
+
+        .inp2{
+            margin-left: 50px;
+        }
+
+        .radius{
+            border-radius: 50px;
+            height: 20px;
+        }
+
+        .order1{
+            height: 30px;
+            border-radius: 50px;
+            text-transform: capitalize;
+        }
+        .name{
+            padding-top: 50px;
+        }
+        .options{
+            margin-left: 20px;
+            width: 150px;
+            border-radius: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+
+ <form action="/customer/order" method="post">
+        <div class="container">
+        <div class="box">
+
+            <div class="item">
+                
+                <p class="name">{{name}}</p>
+            </div>
+            <div class="image">
+                <img src="/uploads/{{image}}" alt="" srcset="" height="150px" width="100px">
+            </div>
+            
+            <div class="quantity">
+                <label for="inp">quantity</label>
+                <input type="text" id="inp" class="inp radius quan" onchange="calc()" name="quantity">
+            </div>
+
+            <div class="price">
+                <label for="inp"> price</label>
+
+                <input type="number"  id="" disabled class="inp1 radius price1" value="{{price}}" name="price" >
+            </div>
+
+            <input type="text" value="{{id}}" name="id" hidden>
+
+
+            <div class="totprice">
+                <label for="inp">total price</label>
+
+                <input type="number"  id=""  class="inp2 radius totprice1" name="totprice" value="">
+            </div>
+
+            <div class="price">
+                <label for="rest">select restorent</label>
+                <select name="restorent_id" id="rest" class="options">
+                    <option value="">select restorent</option>
+                {% for hotel in result %}
+                    <option value="{{hotel.id}}">{{hotel.name}}</option>
+                {% endfor %}
+            </select>
+            </div>
+
+            <div class="order">
+                <button type="submit" class="order1">order now</button>
+            </div>
+
+
+        </div>      
+    </div>
+</form>
+
+
+    {% endblock %}
+
+    <script>
+        let quality  = document.querySelector('.quan')
+
+        let price  = document.querySelector('.price1')
+
+        let totprice  = document.querySelector('.totprice1');
+
+        let calc = ()=>{
+            let total = price.value* quality.value;
+
+
+            console.log(total);
+            totprice.value = total;
+
+            console.log(price.value,quality.value);
+        }
+
+    </script>
+</body>
+</html>
