@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="shopping-cart-container">
+
+        <div class="products-container">
+    
+            <h3 class="title">your products</h3>
+    
+            <div class="box-container">
+    
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="" alt="">
+                    <div class="content">
+                        <h3>Gobi Rice</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id="">
+                        <br>
+                        <span> price : </span>
+                        <span class="price"> 40.00 </span>
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="" alt="">
+                    <div class="content">
+                        <h3>Gobi Mancurian</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id="">
+                        <br>
+                        <span> price : </span>
+                        <span class="price">40.00 </span>
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="" alt="">
+                    <div class="content">
+                        <h3>Tomato soup</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id="">
+                        <br>
+                        <span> price : </span>
+                        <span class="price"> 40.00 </span>
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="" alt="">
+                    <div class="content">
+                        <h3>Hakka Noodles</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id="">
+                        <br>
+                        <span> price : </span>
+                        <span class="price"> 40.00 </span>
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <i class="fas fa-times"></i>
+                    <img src="" alt="">
+                    <div class="content">
+                        <h3>Veg Biryani</h3>
+                        <span> quantity : </span>
+                        <input type="number" name="" value="1" id="">
+                        <br>
+                        <span> price : </span>
+                        <span class="price"> 40.00 </span>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+        <div class="cart-total">
+    
+            <h3 class="title"> cart total </h3>
+    
+            <div class="box">
+    
+                <h3 class="subtotal"> subtotal : <span>200</span> </h3>
+                <h3 class="total"> total : <span>200</span> </h3>
+    
+                <a href="js\pay.html" class="btn">proceed to checkout</a>
+    
+            </div>
+    
+        </div>
+    
+    </section>
+</body>
+</html>
