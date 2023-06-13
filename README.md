@@ -1,6 +1,12 @@
 # order
 
-# Hi this a food order management  project same like swiggy,zomato
+#  This a food order management  project  like swiggy,zomato
+
+this is food order system project same like swiggy , zomato and also it maintains both side of client and restorent side . the client is capable to order foods after login and he also want to see his orders ..
+in restorent side the hotels can see the todays orders ..
+the admin can add the foods and restorents .
+
+this is a full stack project done in node js for backend  and used nunjucks template for front end and mysql for database and tailwind for css .
 
 # procedure 
 
